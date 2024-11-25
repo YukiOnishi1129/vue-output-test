@@ -6,5 +6,9 @@ const repositoryName = 'vue-output-test'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: process.env.NODE_ENV === 'production' ? `/${repositoryName}/` : '/'
+  base: process.env.NODE_ENV === 'production' ? `/${repositoryName}/` : '/',
+  test: {
+    globals: true,
+    environment: 'jsdom'
+  }
 })
