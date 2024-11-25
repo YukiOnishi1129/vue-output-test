@@ -1,6 +1,9 @@
 name: PR check
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
