@@ -2,7 +2,10 @@
 import { defineProps } from 'vue'
 
 const { todoList } = defineProps({
-  todoList: Array
+  todoList: {
+    type: Array,
+    required: true
+  }
 })
 
 const emit = defineEmits(['onDeleteTodo'])
@@ -14,9 +17,17 @@ const handleDeleteClick = (targetId, targetTitle) => {
 
 <template>
   <ul class="list">
-    <li v-for="(todo, index) in todoList" :key="index" class="todo">
+    <li
+      v-for="(todo, index) in todoList"
+      :key="index"
+      class="todo"
+    >
       <span class="task">{{ todo.title }}</span>
-      <font-awesome-icon class="far" icon="fa-trash" @click="handleDeleteClick(todo.id, todo.title)" />
+      <font-awesome-icon
+        class="far"
+        icon="fa-trash"
+        @click="handleDeleteClick(todo.id, todo.title)"
+      />
     </li>
   </ul>
 </template>

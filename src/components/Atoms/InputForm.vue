@@ -7,10 +7,12 @@ defineProps({
     required: true
   },
   placeholder: {
-    type: String
+    type: String,
+    required: true
   },
   onKeydown: {
-    type: Function
+    type: Function,
+    required: true
   }
 })
 
@@ -25,7 +27,7 @@ defineEmits(['update:modelValue'])
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
     @keydown="onKeydown"
-  />
+  >
 </template>
 
 <style scoped>

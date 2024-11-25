@@ -9,19 +9,30 @@ const { showTodoList, addInputValue, searchKeyword, handleAddTodo, handleDeleteT
 
 <template>
   <div class="container">
-    <h1 class="title">Todo List</h1>
+    <h1 class="title">
+      Todo List
+    </h1>
   </div>
   <!-- Todo追加エリア -->
   <section class="common">
-    <AddTodo v-model:addInputValue="addInputValue" :onAddTodo="handleAddTodo" />
+    <AddTodo
+      v-model:add-input-value="addInputValue"
+      :on-add-todo="handleAddTodo"
+    />
   </section>
   <!-- Todo フォームエリア -->
   <section class="common">
-    <InputForm v-model="searchKeyword" :placeholder="`Search Keyword`" />
+    <InputForm
+      v-model="searchKeyword"
+      :placeholder="`Search Keyword`"
+    />
   </section>
   <!-- Todo 一覧表示エリア -->
   <section class="common">
-    <TodoList :todoList="showTodoList" @onDeleteTodo="handleDeleteTodo" />
+    <TodoList
+      :todo-list="showTodoList"
+      @on-delete-todo="handleDeleteTodo"
+    />
   </section>
 </template>
 

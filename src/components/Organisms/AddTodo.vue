@@ -3,26 +3,24 @@ import { defineProps, defineEmits } from 'vue'
 import InputForm from '../Atoms/InputForm.vue'
 
 defineProps({
-  addInputValue: {
-    type: String,
-    required: true
-  },
   onAddTodo: {
     type: Function,
     required: true
   }
 })
 
-defineEmits(['update:modelValue'])
+defineEmits(['update:addInputValue'])
 </script>
 
 <template>
-  <h2 class="subTitle">ADD TODO</h2>
+  <h2 class="subTitle">
+    Add TODO
+  </h2>
   <InputForm
-    :modelValue="addInputValue"
+    :model-value="addInputValue"
     :placeholder="`Please input todo`"
-    @update:modelValue="$emit('update:addInputValue', $event)"
-    :onKeydown="onAddTodo"
+    :on-keydown="onAddTodo"
+    @update:model-value="$emit('update:addInputValue', $event)"
   />
 </template>
 
