@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps, defineEmits } from 'vue'
 import InputForm from '../Atoms/InputForm.vue'
 
 defineProps({
